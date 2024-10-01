@@ -1,7 +1,11 @@
 .header {
     display: flex;
+    max-width: 1440px;
+    margin: 0 auto;
     align-items: center;
+    justify-content: center;
     background-color: whitesmoke;
+    border-bottom: 4px solid black;
 }
 
 .header__title {
