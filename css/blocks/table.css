@@ -1,11 +1,13 @@
 .table {
-    display: flex;
-    justify-content: space-between;
-    background-color: violet;
+    background-color: grey;
+    color: whitesmoke;
+    width: 100%;
 }
 
-.table-head {
-    display: flex;
-    justify-content: space-between;
-    
+.table td,th {
+    padding: 10px;
+    text-align: center;
+    vertical-align: unset;
+    text-transform: uppercase;
+    /* width: 100%; */
 }
