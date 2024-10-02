@@ -4,9 +4,8 @@
     background-color: violet;
 }
 
-
-tr {
-    margin-right: 20px;
-    background-color: grey;
-    color: whitesmoke;
+.table-head {
+    display: flex;
+    justify-content: space-between;
+    
 }
