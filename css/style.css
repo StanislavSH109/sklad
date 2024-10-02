@@ -7,3 +7,5 @@
 /* #BLOCKS */
 
 @import "blocks/header.css";
+@import "blocks/table.css";
+@import "blocks/wrapper.css";

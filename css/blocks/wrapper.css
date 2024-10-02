@@ -1,0 +1,19 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button-add {
+    border: 1px solid black;
+    padding: 14px 30px;
+    cursor: pointer;
+    background-color: inherit;
+    transition: .3s ease-in-out;
+}
+
+.button-add:hover {
+    transition: .3s ease-in-out;
+    background-color: green;
+    color: white;
+}

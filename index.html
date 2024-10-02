@@ -8,14 +8,24 @@
 </head>
 <body>
     <header class="header">
-        <div class="container">
-            <h1 class="header__title">SKLAD.TECH</h1>
-        </div>
+        <h1 class="header__title">SKLAD.TECH</h1>
     </header>
     <main class="main">
         <section class="table-section">
             <div class="container">
-                
+                <div class="wrapper">
+                    <h2 class="title">Склад</h2>
+                    <button class="button-add">Добавить</button>
+                </div>
+                <table class="table" id="table">
+                    <thead class="table-head">
+                        <tr>Название</tr>
+                        <tr>Полка</tr>
+                        <tr>Вес</tr>
+                        <tr>Время Хранения</tr>
+                    </thead>
+                    <tbody class="sklad-tbody" id="sklad-tbody"></tbody>
+                </table>
             </div>
         </section>
     </main>

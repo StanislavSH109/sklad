@@ -1,0 +1,12 @@
+.table {
+    display: flex;
+    justify-content: space-between;
+    background-color: violet;
+}
+
+
+tr {
+    margin-right: 20px;
+    background-color: grey;
+    color: whitesmoke;
+}
