@@ -1,3 +1,16 @@
+function createContainer() {
+    const containerElement = document.createElement('div');
+    containerElement.classList.add('container');
+    return containerElement
+}
+
+function createForm() {
+    const formContainer = createContainer();
+    const formElement = document.createElement('form');
+    
+}
+
+
 function addItem() {
     const buttonAdd = document.querySelector('.button-add');
 
@@ -7,7 +20,6 @@ function addItem() {
         tableElement.classList.add('table-section-none');
     });
 }
-
 
 document.addEventListener('DOMContentLoaded', function () {
     addItem();
