@@ -5,10 +5,11 @@ function getText() {
     return titleElement
 }
 
-function createInputsElements(type, name, placeholder, required) {
+function createInputsElements(type, name, placeholder, id, required) {
     let inputElement = document.createElement('input');
     inputElement.type = type;
     inputElement.name = name;
+    inputElement.id = id;
     inputElement.placeholder = placeholder;
     inputElement.required = required;
     return inputElement
@@ -33,9 +34,9 @@ function addItem() {
     const formElement = createForm();
     const buttonAdd = document.querySelector('.button-add');
 
-    let nameInputElement = createInputsElements('text', 'item-name', 'Название', 'required');
-    let shelfInputElement = createInputsElements('number', 'shelf-number', 'Полка', 'required');
-    // let weightInputElement = createInputsElements('te')
+    let nameInputElement = createInputsElements('text', 'item-name', 'Название', 'item', 'required');
+    let shelfInputElement = createInputsElements('text', 'shelf-number', 'Полка', 'shelf', 'required');
+    let weightInputElement = createInputsElements('')
 
     buttonAdd.addEventListener('click', function (e) {
         e.preventDefault();
