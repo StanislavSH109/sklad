@@ -73,6 +73,7 @@ function createStorageItems() {
   const shelf = document.querySelector('#shelf').value;
   const weight = document.querySelector('#weight').value;
   const date = document.querySelector('#date').value;
+  const itemId = document.querySelector('#itemId');
   
   let existItems = JSON.parse(localStorage.getItem('items')) || [];
 
@@ -80,7 +81,8 @@ function createStorageItems() {
     name,
     shelf,
     weight,
-    date
+    date,
+    id: Date.now()
   }
 
   existItems.push(items);
@@ -93,7 +95,7 @@ function renderTable() {
     const itemsTableBody = document.querySelector('#sklad-tbody');
 
     itemsTableBody.innerHTML = '';
-    items.forEach((item) => {
+    items.forEach((item, index) => {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${item.name}</td>
@@ -104,8 +106,21 @@ function renderTable() {
         
         `;
         itemsTableBody.appendChild(row);
+
+        row.querySelector('.form__button-remove').addEventListener('click', (e) => {
+            removeItem(index);
+        })
     });
 
+}
+
+function removeItem(index) {
+    let items = JSON.parse(localStorage.getItem('items')) || [];
+    console.log(items);
+    items.splice(index, 1);
+
+    localStorage.setItem('items', JSON.stringify(items));
+    renderTable();
 }
 
 document.addEventListener('DOMContentLoaded', function () {
