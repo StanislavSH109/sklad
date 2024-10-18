@@ -11,3 +11,22 @@
     padding: 20px 0 0 0;
     text-align: center;
 }
+
+.form__button-create {
+    width: 350px;
+    margin: 10px 0 0 0;
+    padding: 15px;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    outline: 2px solid black;
+    border: none;
+}
+
+.form__button-create:hover {
+    color: white;
+    background-color: green;
+    transition: .3s ease-out;
+    outline: none;
+}

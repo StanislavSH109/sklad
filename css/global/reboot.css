@@ -38,4 +38,5 @@ input[type=number] {
 input {
     padding: 10px;
     border: 2px solid black;
+    width: 350px;
 }
