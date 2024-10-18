@@ -32,9 +32,9 @@ function createForm() {
     return formElement;
 }
 
-function buttonCreateWrite(text) {
+function buttonCreateWrite() {
     const buttonCreate = document.createElement('button');
-    buttonCreate.textContent = text;
+    buttonCreate.textContent = 'Создать запись';
     buttonCreate.classList.add('form__button-create');
     return buttonCreate;
 }
@@ -45,23 +45,27 @@ function addItem() {
     const titleElement = getText();
     const formElement = createForm();
     const buttonAdd = document.querySelector('.button-add');
-    const buttonCreate = buttonCreateWrite('Создать запись');
+    const buttonCreate = buttonCreateWrite();
 
     let nameInputElement = createInputsElements('text', 'item-name', 'Название', 'item', 'required');
     let shelfInputElement = createInputsElements('text', 'shelf-number', 'Полка', 'shelf', 'required');
     let weightInputElement = createInputsElements('number', 'weight-item', 'Вес', 'weight', 'required');
     let dateInputElement = createInputsElements('date', 'date-item', 'Дата назначения', 'date', 'required');
 
-    buttonAdd.addEventListener('click', function (e) {
+    buttonAdd.addEventListener('click', (e) => {
         e.preventDefault();
         const tableElement = document.querySelector('.table-section');
         tableElement.classList.add('table-section-none');
         appElement.append(containerElement);
     });
 
+    buttonCreate.addEventListener('click', (e) => {
+        createStorageItems();
+    });
+
     containerElement.append(titleElement, formElement);
     formElement.append(nameInputElement, shelfInputElement, weightInputElement, dateInputElement, buttonCreate);
-    return buttonCreate;
+    renderTable();
 }
 
 function createStorageItems() {
@@ -104,11 +108,7 @@ function renderTable() {
 
 }
 
-
-
 document.addEventListener('DOMContentLoaded', function () {
     addItem();
 })
-
-renderTable();
 
