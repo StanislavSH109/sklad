@@ -64,17 +64,30 @@ function addItem() {
     return buttonCreate;
 }
 
-function items() {
+function createStorageItems() {
   const name = document.querySelector('#item').value;
   const shelf = document.querySelector('#shelf').value;
   const weight = document.querySelector('#weight').value;
- 
+  const date = document.querySelector('#date').value;
+  
+  let existItems = JSON.parse(localStorage.getItem('items')) || [];
+
+  let items = {
+    name,
+    shelf,
+    weight,
+    date
+  }
+
+  localStorage.setItem('items', JSON.stringify(itemss));
+
 }
 
 const buttonCreate = addItem();
 buttonCreate.addEventListener('click', function (e) {
     e.preventDefault();
-    items();
+    createStorageItems();
+    window.location.reload();
 });
 
 function renderTable() {
@@ -83,8 +96,6 @@ function renderTable() {
 
     itemsTableBody.innerHTML = '';
 }
-
-
 
 document.addEventListener('DOMContentLoaded', function () {
     addItem();
