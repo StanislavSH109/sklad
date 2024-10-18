@@ -47,7 +47,6 @@ function addItem() {
     const buttonAdd = document.querySelector('.button-add');
     const buttonCreate = buttonCreateWrite('Создать запись');
 
-
     let nameInputElement = createInputsElements('text', 'item-name', 'Название', 'item', 'required');
     let shelfInputElement = createInputsElements('text', 'shelf-number', 'Полка', 'shelf', 'required');
     let weightInputElement = createInputsElements('number', 'weight-item', 'Вес', 'weight', 'required');
@@ -62,7 +61,27 @@ function addItem() {
 
     containerElement.append(titleElement, formElement);
     formElement.append(nameInputElement, shelfInputElement, weightInputElement, dateInputElement, buttonCreate);
+    return buttonCreate;
+}
 
+function items() {
+  const name = document.querySelector('#item').value;
+  const shelf = document.querySelector('#shelf').value;
+  const weight = document.querySelector('#weight').value;
+ 
+}
+
+const buttonCreate = addItem();
+buttonCreate.addEventListener('click', function (e) {
+    e.preventDefault();
+    items();
+});
+
+function renderTable() {
+    const items = JSON.parse(localStorage.getItem('items')) || [];
+    const itemsTableBody = document.querySelector('#sklad-tbody');
+
+    itemsTableBody.innerHTML = '';
 }
 
 
@@ -70,4 +89,5 @@ function addItem() {
 document.addEventListener('DOMContentLoaded', function () {
     addItem();
 })
+
 
