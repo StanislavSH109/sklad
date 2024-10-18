@@ -5,6 +5,15 @@ function getText() {
     return titleElement
 }
 
+function createInputsElements(type, name, placeholder, required) {
+    let inputElement = document.createElement('input');
+    inputElement.type = type;
+    inputElement.name = name;
+    inputElement.placeholder = placeholder;
+    inputElement.required = required;
+    return inputElement
+} 
+
 function createContainer() {
     const containerElement = document.createElement('div');
     containerElement.classList.add('container');
@@ -24,20 +33,23 @@ function addItem() {
     const formElement = createForm();
     const buttonAdd = document.querySelector('.button-add');
 
-    // let nameInput = document.createElement('')
+    let nameInputElement = createInputsElements('text', 'item-name', 'Название', 'required');
+    let shelfInputElement = createInputsElements('number', 'shelf-number', 'Полка', 'required');
+    // let weightInputElement = createInputsElements('te')
 
     buttonAdd.addEventListener('click', function (e) {
         e.preventDefault();
         const tableElement = document.querySelector('.table-section');
         tableElement.classList.add('table-section-none');
+        appElement.append(containerElement);
     });
 
     containerElement.append(titleElement, formElement);
-    appElement.append(containerElement, );
+    formElement.append(nameInputElement, shelfInputElement);
 
 }
 
-document.addEventListener('DOMContentLoaded', function (e) {
+document.addEventListener('DOMContentLoaded', function () {
     addItem();
 })
 
