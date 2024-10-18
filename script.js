@@ -79,26 +79,36 @@ function createStorageItems() {
     date
   }
 
-  localStorage.setItem('items', JSON.stringify(itemss));
+  existItems.push(items);
+  localStorage.setItem('items', JSON.stringify(existItems));
 
 }
-
-const buttonCreate = addItem();
-buttonCreate.addEventListener('click', function (e) {
-    e.preventDefault();
-    createStorageItems();
-    window.location.reload();
-});
 
 function renderTable() {
     const items = JSON.parse(localStorage.getItem('items')) || [];
     const itemsTableBody = document.querySelector('#sklad-tbody');
 
     itemsTableBody.innerHTML = '';
+    items.forEach((item) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${item.name}</td>
+            <td>${item.shelf}</td>
+            <td>${item.weight}</td>
+            <td>${item.date}</td>
+            <td><button class="form__button-remove">Удалить</button></td>
+        
+        `;
+        itemsTableBody.appendChild(row);
+    });
+
 }
+
+
 
 document.addEventListener('DOMContentLoaded', function () {
     addItem();
 })
 
+renderTable();
 

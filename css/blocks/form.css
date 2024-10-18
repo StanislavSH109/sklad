@@ -30,3 +30,18 @@
     transition: .3s ease-out;
     outline: none;
 }
+
+.form__button-remove {
+    background-color: white;
+    border: none;
+    outline: 1px solid black;
+    padding: 5px;
+    transition: .3s ease-out;
+    cursor: pointer;
+}
+
+.form__button-remove:hover {
+    background-color: red;
+    color: white;
+    transition: .3s ease-in;
+}
