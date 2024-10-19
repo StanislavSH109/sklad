@@ -1,4 +1,4 @@
-import { createForm, createInputsElements, createContainer, buttonCreate } from "./components.js";
+import * as components from "./components.js";
 import { createStorageItems } from "./storage.js";
 import { renderTable } from "./render.js";
 import { getText } from "./title.js";
@@ -6,17 +6,17 @@ import { getText } from "./title.js";
 // Main
 export function addItem() {
     const appElement = document.querySelector('.add-app');
-    const containerElement = createContainer();
+    const containerElement = components.createContainer();
     const titleElement = getText();
-    const formElement = createForm();
+    const formElement = components.createForm();
     const buttonAdd = document.querySelector('.button-add');
-    const buttonCreateElement = buttonCreate('Добавить запись');
-    const buttonToMain = buttonCreate('На главную');
+    const buttonCreateElement = components.buttonCreate('Добавить запись');
+    const buttonToMain = components.buttonCreate('На главную');
 
-    let nameInputElement = createInputsElements('text', 'item-name', 'Название', 'item', 'required');
-    let shelfInputElement = createInputsElements('text', 'shelf-number', 'Полка', 'shelf', 'required');
-    let weightInputElement = createInputsElements('number', 'weight-item', 'Вес', 'weight', 'required');
-    let dateInputElement = createInputsElements('date', 'date-item', 'Дата назначения', 'date', 'required');
+    let nameInputElement = components.createInputsElements('text', 'item-name', 'Название', 'item', 'required');
+    let shelfInputElement = components.createInputsElements('text', 'shelf-number', 'Полка', 'shelf', 'required');
+    let weightInputElement = components.createInputsElements('number', 'weight-item', 'Вес', 'weight', 'required');
+    let dateInputElement = components.createInputsElements('date', 'date-item', 'Дата назначения', 'date', 'required');
 
     buttonAdd.addEventListener('click', (e) => {
         e.preventDefault();
