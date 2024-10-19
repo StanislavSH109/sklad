@@ -19,7 +19,8 @@ export function navigate(appElement) {
             break
         default:
             enterApp();
-            loaderElement.remove();
             break
     }
+
+    loaderElement.remove();
 }
