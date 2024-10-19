@@ -1,7 +1,6 @@
+import { createForm, createInputsElements, createContainer, buttonCreate } from "./components.js";
+import { createStorageItems } from "./storage.js";
 import { renderTable } from "./render.js";
-import { createContainer } from "./components.js";
-import { createForm } from "./components.js";
-import { buttonCreate } from "./components.js";
 import { getText } from "./title.js";
 
 // Main
@@ -37,7 +36,7 @@ export function addItem() {
     });
 
     containerElement.append(titleElement, formElement);
-    formElement.append(nameInputElement, shelfInputElement, weightInputElement, dateInputElement, buttonCreate, buttonToMain);
+    formElement.append(nameInputElement, shelfInputElement, weightInputElement, dateInputElement, buttonCreateElement, buttonToMain);
     renderTable();
 }
 
