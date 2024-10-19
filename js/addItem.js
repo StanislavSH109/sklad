@@ -27,6 +27,12 @@ export function addItem() {
 
     buttonCreateElement.addEventListener('click', (e) => {
         e.preventDefault();
+
+        if (!nameInputElement.value || !shelfInputElement.value || !weightInputElement.value || !dateInputElement.value) {
+            alert('Внимание! Необходимо заполнить все поля!');
+            return;
+        }
+
         createStorageItems();
         navigate('sklad');
     });

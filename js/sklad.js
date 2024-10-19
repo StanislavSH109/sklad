@@ -1,4 +1,5 @@
 import { navigate } from "./navigate.js";
+import { renderTable } from "./render.js";
 
 export function skladApp() {
     const mainElement = document.querySelector('.main');
@@ -33,6 +34,8 @@ export function skladApp() {
     buttonAdd.addEventListener('click', (e) => {
         navigate('add');
     });
+
+    renderTable();
 
     return sectionElement;
 }

@@ -6,6 +6,9 @@ export function navigate(appElement) {
     const mainElement = document.querySelector('.main');
     mainElement.innerHTML = '';
 
+    const loaderElement = 
+
+
     switch(appElement) {
         case 'sklad':
             skladApp();
