@@ -123,6 +123,8 @@ function removeItem(index) {
     renderTable();
 }
 
+
+
 document.addEventListener('DOMContentLoaded', function () {
     addItem();
 })
