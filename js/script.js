@@ -1,8 +1,6 @@
-import {addItem} from "./addItem.js";
-import { getLoader } from "./components.js";
+import { navigate } from "./navigate.js";
 
 document.addEventListener('DOMContentLoaded', function () {
-    getLoader();
-    addItem();
+    navigate();
 })
 
