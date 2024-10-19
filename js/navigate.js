@@ -1,13 +1,14 @@
 import { addItem } from "./addItem.js";
 import { enterApp } from "./enter.js";
 import { skladApp } from "./sklad.js";
+import { getLoader } from "./components.js";
 
 export function navigate(appElement) {
     const mainElement = document.querySelector('.main');
     mainElement.innerHTML = '';
 
-    const loaderElement = 
-
+    const loaderElement = getLoader();
+    mainElement.append(loaderElement);
 
     switch(appElement) {
         case 'sklad':
@@ -18,6 +19,7 @@ export function navigate(appElement) {
             break
         default:
             enterApp();
+            loaderElement.remove();
             break
     }
 }
