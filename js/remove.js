@@ -1,5 +1,7 @@
+import { renderTable } from "./render.js";
+
 // Удаление записи из таблицы
-function removeItem(index) {
+export function removeItem(index) {
     let items = JSON.parse(localStorage.getItem('items')) || [];
     console.log(items);
     items.splice(index, 1);

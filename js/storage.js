@@ -1,5 +1,5 @@
 // Получение значений и добавление в LocalStorage
-function createStorageItems() {
+export function createStorageItems() {
     const name = document.querySelector('#item').value;
     const shelf = document.querySelector('#shelf').value;
     const weight = document.querySelector('#weight').value;

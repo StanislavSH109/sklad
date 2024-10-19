@@ -1,5 +1,7 @@
+import { removeItem } from "./remove.js";
+
 // Отрисовка таблицы
-function renderTable() {
+export function renderTable() {
     const items = JSON.parse(localStorage.getItem('items')) || [];
     const itemsTableBody = document.querySelector('#sklad-tbody');
 

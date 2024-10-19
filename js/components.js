@@ -1,5 +1,5 @@
 // Создание input полей
-function createInputsElements(type, name, placeholder, id, required) {
+export function createInputsElements(type, name, placeholder, id, required) {
     let inputElement = document.createElement('input');
     inputElement.type = type;
     inputElement.name = name;
@@ -15,7 +15,7 @@ function createInputsElements(type, name, placeholder, id, required) {
 } 
 
 // Создание контейнера
-function createContainer() {
+export function createContainer() {
     const containerElement = document.createElement('div');
     containerElement.classList.add('container');
     return containerElement;
@@ -23,14 +23,14 @@ function createContainer() {
 
 
 // Создание формы
-function createForm() {
+export function createForm() {
     const formElement = document.createElement('form');
     formElement.classList.add('form');
     return formElement;
 }
 
 // Создание кнопки
-function buttonCreate(text) {
+export function buttonCreate(text) {
     const buttonCreate = document.createElement('button');
     buttonCreate.textContent = text;
     buttonCreate.classList.add('form__button-create');
