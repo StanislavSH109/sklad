@@ -32,9 +32,9 @@ function createForm() {
     return formElement;
 }
 
-function buttonCreateWrite() {
+function buttonCreateWrite(text) {
     const buttonCreate = document.createElement('button');
-    buttonCreate.textContent = 'Создать запись';
+    buttonCreate.textContent = text;
     buttonCreate.classList.add('form__button-create');
     return buttonCreate;
 }
@@ -45,7 +45,8 @@ function addItem() {
     const titleElement = getText();
     const formElement = createForm();
     const buttonAdd = document.querySelector('.button-add');
-    const buttonCreate = buttonCreateWrite();
+    const buttonCreate = buttonCreateWrite('Добавить запись');
+    const buttonToMain = buttonCreateWrite('На главную');
 
     let nameInputElement = createInputsElements('text', 'item-name', 'Название', 'item', 'required');
     let shelfInputElement = createInputsElements('text', 'shelf-number', 'Полка', 'shelf', 'required');
@@ -63,8 +64,14 @@ function addItem() {
         createStorageItems();
     });
 
+    buttonToMain.addEventListener('click', () => {
+        appElement.innerHTML = '';
+        const tableElement = document.querySelector('.table-section');
+        tableElement.classList.remove('table-section-none');
+    });
+
     containerElement.append(titleElement, formElement);
-    formElement.append(nameInputElement, shelfInputElement, weightInputElement, dateInputElement, buttonCreate);
+    formElement.append(nameInputElement, shelfInputElement, weightInputElement, dateInputElement, buttonCreate, buttonToMain);
     renderTable();
 }
 
