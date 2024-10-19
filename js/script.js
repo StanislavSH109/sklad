@@ -1,10 +1,3 @@
-function getText() {
-    const titleElement = document.createElement('h1');
-    titleElement.textContent = 'Добавить запись';
-    titleElement.classList.add('form__title');
-    return titleElement;
-}
-
 function createInputsElements(type, name, placeholder, id, required) {
     let inputElement = document.createElement('input');
     inputElement.type = type;
