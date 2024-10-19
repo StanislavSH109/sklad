@@ -1,36 +1,4 @@
-function createInputsElements(type, name, placeholder, id, required) {
-    let inputElement = document.createElement('input');
-    inputElement.type = type;
-    inputElement.name = name;
-    inputElement.id = id;
-    inputElement.placeholder = placeholder;
-    inputElement.required = required;
 
-    if(type == 'number') {
-        inputElement.min = '0';
-    }
-
-    return inputElement;
-} 
-
-function createContainer() {
-    const containerElement = document.createElement('div');
-    containerElement.classList.add('container');
-    return containerElement;
-}
-
-function createForm() {
-    const formElement = document.createElement('form');
-    formElement.classList.add('form');
-    return formElement;
-}
-
-function buttonCreateWrite(text) {
-    const buttonCreate = document.createElement('button');
-    buttonCreate.textContent = text;
-    buttonCreate.classList.add('form__button-create');
-    return buttonCreate;
-}
 
 function addItem() {
     const appElement = document.querySelector('.add-app');
@@ -38,8 +6,8 @@ function addItem() {
     const titleElement = getText();
     const formElement = createForm();
     const buttonAdd = document.querySelector('.button-add');
-    const buttonCreate = buttonCreateWrite('Добавить запись');
-    const buttonToMain = buttonCreateWrite('На главную');
+    const buttonCreateElement = buttonCreate('Добавить запись');
+    const buttonToMain = buttonCreate('На главную');
 
     let nameInputElement = createInputsElements('text', 'item-name', 'Название', 'item', 'required');
     let shelfInputElement = createInputsElements('text', 'shelf-number', 'Полка', 'shelf', 'required');
@@ -53,7 +21,7 @@ function addItem() {
         appElement.append(containerElement);
     });
 
-    buttonCreate.addEventListener('click', (e) => {
+    buttonCreateElement.addEventListener('click', (e) => {
         createStorageItems();
     });
 
