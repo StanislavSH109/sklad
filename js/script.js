@@ -1,5 +1,3 @@
-
-
 function addItem() {
     const appElement = document.querySelector('.add-app');
     const containerElement = createContainer();
@@ -34,28 +32,6 @@ function addItem() {
     containerElement.append(titleElement, formElement);
     formElement.append(nameInputElement, shelfInputElement, weightInputElement, dateInputElement, buttonCreate, buttonToMain);
     renderTable();
-}
-
-function createStorageItems() {
-  const name = document.querySelector('#item').value;
-  const shelf = document.querySelector('#shelf').value;
-  const weight = document.querySelector('#weight').value;
-  const date = document.querySelector('#date').value;
-  const itemId = document.querySelector('#itemId');
-  
-  let existItems = JSON.parse(localStorage.getItem('items')) || [];
-
-  let items = {
-    name,
-    shelf,
-    weight,
-    date,
-    id: Date.now()
-  }
-
-  existItems.push(items);
-  localStorage.setItem('items', JSON.stringify(existItems));
-
 }
 
 function renderTable() {
