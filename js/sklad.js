@@ -1,7 +1,7 @@
 import { navigate } from "./navigate.js";
 import { renderTable } from "./render.js";
 
-export function skladApp() {
+export default function skladApp() {
     const mainElement = document.querySelector('.main');
     const sectionElement = document.createElement('section');
     sectionElement.classList.add('table-section');

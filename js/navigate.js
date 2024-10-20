@@ -1,9 +1,6 @@
-import { addItem } from "./addItem.js";
-import { enterApp } from "./enter.js";
-import { skladApp } from "./sklad.js";
 import { getLoader } from "./components.js";
 
-export function navigate(appElement) {
+export async function navigate(appElement) {
     const mainElement = document.querySelector('.main');
     mainElement.innerHTML = '';
 
@@ -12,15 +9,20 @@ export function navigate(appElement) {
 
     switch(appElement) {
         case 'sklad':
-            skladApp();
+            const skladApp = await import("./sklad.js");
+            skladApp.default();
+            loaderElement.remove();
             break
         case 'add':
-            addItem();
+            const addItem = await import("./addItem.js");
+            addItem.default();
+            loaderElement.remove();
             break
         default:
-            enterApp();
+            const enterApp = await import("./enter.js")
+            enterApp.default();
+            loaderElement.remove();
             break
     }
-
-    loaderElement.remove();
+    
 }

@@ -6,7 +6,7 @@ import { navigate } from "./navigate.js";
 
 
 // Main
-export function addItem() {
+export default function addItem() {
     const mainElement = document.querySelector('.main');
     mainElement.innerHTML = '';
 

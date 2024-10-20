@@ -1,6 +1,6 @@
 import { navigate } from "./navigate.js";
 
-export function enterApp() {
+export default function enterApp() {
     const mainElement = document.querySelector('.main');
     const enterElement = document.createElement('div');
     enterElement.classList.add('enter');
