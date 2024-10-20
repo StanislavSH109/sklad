@@ -17,7 +17,7 @@
   clip-path: polygon(var(--_d) 0,100% 0,100% calc(100% - var(--_d)),calc(100% - var(--_d)) 100%,0 100%,0 var(--_d));
   background:
     conic-gradient(from -90deg at calc(100% - var(--_d)) var(--_d),
-     #5c5b5b 135deg,#666 0 270deg,#aaa 0);
+     #575757 135deg,#666 0 270deg,#aaa 0);
   animation: l6 2s infinite;
 }
 .loader:after {
