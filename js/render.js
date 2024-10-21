@@ -1,4 +1,5 @@
 import { removeItem } from "./remove.js";
+import { sort } from "./sort.js";
 
 // Отрисовка таблицы
 export function renderTable() {
@@ -22,5 +23,5 @@ export function renderTable() {
             removeItem(index);
         })
     });
-
+    sort();
 }

@@ -36,7 +36,7 @@ export default function skladApp() {
     });
 
     renderTable();
-
+    
     return sectionElement;
 }
 
