@@ -9,10 +9,47 @@
     text-align: center;
     vertical-align: unset;
     text-transform: uppercase;
-    /* width: 100%; */
 }
 
 .sklad-tbody td {
     background-color: whitesmoke;
     color: black;
+}
+
+.table {
+    background-color: grey;
+    color: whitesmoke;
+    width: 100%;
+}
+
+.table td,th {
+    padding: 10px;
+    text-align: center;
+    vertical-align: unset;
+    text-transform: uppercase;
+}
+
+.sklad-tbody td {
+    background-color: whitesmoke;
+    color: black;
+}
+
+.table__btn-sort {
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    background-color: unset;
+    border: none;
+    transition: .3s ease-out;
+    width: 100%;
+}
+
+.table__btn-sort:hover {
+    background-color: #525151;
+    transition: .3s ease-in;
+}
+
+.table__btn-sort:active {
+    color: rgb(142, 142, 247);
+    transition: .1s ease-in;
 }
