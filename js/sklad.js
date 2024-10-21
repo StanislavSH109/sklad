@@ -14,10 +14,10 @@ export default function skladApp() {
             <table class="table" id="table">
                 <thead class="table-head">
                     <tr>
-                        <th>Название</th>
-                        <th>Полка</th>
-                        <th>Вес</th>
-                        <th>Время Хранения</th>
+                        <th><button class="table__btn-sort" id="name-sort">Название</button></th>
+                        <th><button class="table__btn-sort" id="shelf-sort">Полка</button></th>
+                        <th><button class="table__btn-sort" id="weight-sort">Вес</button></th>
+                        <th><button class="table__btn-sort" id="time-sort">Время Хранения</button></th>
                     </tr>
                 </thead>
                 <tbody class="sklad-tbody" id="sklad-tbody">
