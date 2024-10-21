@@ -1,5 +1,6 @@
 import { getLoader } from "./components.js";
 
+
 export async function navigate(appElement) {
     const mainElement = document.querySelector('.main');
     mainElement.innerHTML = '';
@@ -24,5 +25,5 @@ export async function navigate(appElement) {
             loaderElement.remove();
             break
     }
-    
+
 }

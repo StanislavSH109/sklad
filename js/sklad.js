@@ -1,5 +1,6 @@
 import { navigate } from "./navigate.js";
 import { renderTable } from "./render.js";
+import { sort } from "./sort.js";
 
 export default function skladApp() {
     const mainElement = document.querySelector('.main');
@@ -36,7 +37,7 @@ export default function skladApp() {
     });
 
     renderTable();
-    
+    sort();
     return sectionElement;
 }
 

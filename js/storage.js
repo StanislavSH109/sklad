@@ -18,5 +18,5 @@ export function createStorageItems() {
   
     existItems.push(items);
     localStorage.setItem('items', JSON.stringify(existItems));
-  
+    
   }
